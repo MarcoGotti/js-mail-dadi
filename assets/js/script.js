@@ -13,15 +13,17 @@ console.log(correctEmail);
 //confronta
 for (let i = 0; i < list.length; i++) {
     let element = list[i]; 
-    if (element === userEmail){
+    if (element = userEmail){
         correctEmail = true;
-        console.log('Good! You are in');
+        console.log(`Good! You are in
+${userEmail} is a valid email`);
    }
 
 }
 
-if (correctEmail == false){
-    console.log('No, you are out')
+if (correctEmail == false){   //perchè ==  ?
+    console.log(`No way!
+${userEmail} is not a valid`)
 }
 
 
