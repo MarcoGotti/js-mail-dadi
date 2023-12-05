@@ -15,11 +15,11 @@
     <div class="container d-flex flex-wrap gap-5 py-5 mx-auto">
       <h2 class="col-12 text-center ">Exercise Email-check</h2>
       <div class="col-7 d-flex form-floating">
-        <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+        <input type="email" class="form-control" id="emailInput">
         <label for="emailInput">@</label>
         <button type="button" id="buttonEmail" class="btn btn-warning border border-black ms-2">Check</button>
       </div>
-      <div id="positiveCheck" class="col d-flex align-items-end pb-1 px-4 text-warning text-decoration-underline fw-bold ">Great! Valid Email</div>
+      <div id="positiveCheck" class="col d-flex align-items-end pb-1 px-4 text-warning text-decoration-underline fw-bold d-none">Great! Valid Email</div>
     </div>
     <hr class="text-bg-dark">
     <div class="container py-5 mx-auto">
@@ -28,20 +28,21 @@
             <img style="width: 40px;" src="https://cdn.imgbin.com/4/0/7/imgbin-dice-Y7Ta4Yn8cUKND7APzs2S8Qz9c.jpg" alt="">
         </div>
         <h6 class="col-12 text-center">Play against Bobby</h6>
-        <div class="row mt-5 justify-content-evenly">
+        <div class="row mt-5 justify-content-center ">
             <div class="col-2 px-2">
-                <label class="bg-danger text-white mb-1 fw-bold" for="userDice">Your Dice</label>
-                <input id="userDice" class="form-control" type="text" value="Your dice" aria-label="Disabled input example" disabled readonly>
+                <label class="bg-danger text-white mb-1 fw-bold rounded-3 px-1" for="userDice">Your Dice</label>
+                <!-- Perchè non riesco mai ad usare ms-auto o mx-auto??? Dove sbaglio??-->
+                <input id="userDice" class="form-control text-center" type="text" value="Your dice" aria-label="Disabled input example" disabled readonly>
             </div>
             <div class="col-2 text-center ">
-                <button type="button" id="buttonDice" class="btn btn-danger border border-white">Check</button> 
+                <button type="button" id="buttonDice" class="btn btn-danger border border-white">Play against Bobby</button> 
             </div>
             <div class="col-2">
-                <label class="text-white mb-1  fw-bold bg-danger " for="bobbyDice">Bobby's</label>
-                <input id="bobbyDice" class="form-control px-2" type="text" value="Bobby's" aria-label="Disabled input example" disabled readonly>
+                <label class="text-white mb-1  fw-bold bg-danger rounded-3 px-1" for="bobbyDice">Bobby's</label>
+                <input id="bobbyDice" class="form-control text-center" type="text" value="Bobby's" aria-label="Disabled input example" disabled readonly>
             </div>
             <div class="col-12 text-center text-danger  fw-bold mt-5">
-                <span class="badge text-bg-danger px-5"></span>
+                <span id="result" class="badge rounded-pill text-bg-danger fs-1 px-5 border border-1 border-white "></span>
 
             </div>
         </div>

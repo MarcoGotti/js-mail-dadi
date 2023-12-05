@@ -37,7 +37,7 @@ emailInput.addEventListener('click', function(){ //***why do I need two clicks??
 
 //click and play
 const buttonDice  = document.getElementById('buttonDice');
-buttonDice.addEventListener('click', function() { //***perchè se refresho non tornano i value iniziali??
+buttonDice.addEventListener('click', function() { //***perchè se refresho non tornano i value iniziali "Your Dice", "Bobby's"??
     
     //genera numero random 1-6
 
@@ -53,19 +53,30 @@ buttonDice.addEventListener('click', function() { //***perchè se refresho non t
         //create const utility
         const userDice = document.getElementById('userDice');
         const bobbyDice = document.getElementById('bobbyDice');
+        const resultEl = document.querySelector('span');
+        
     if (firstDice > secondDice){
         userDice.classList.add('border', 'border-danger', 'border-3');
         bobbyDice.classList.remove('border', 'border-danger', 'border-success', 'border-2');
-        document.querySelector('span').innerText = ('You WIN !!!')
+        resultEl.innerText = ('You WIN !!!')
+        resultEl.classList.remove('text-bg-success');
+        resultEl.classList.add('text-bg-danger');
     } else if (secondDice > firstDice) {
         bobbyDice.classList.add('border', 'border-danger', 'border-3');
         userDice.classList.remove('border', 'border-danger', 'border-success', 'border-2');
-        document.querySelector('span').innerText = ('Bobby wins!')
+        resultEl.innerText = ('Bobby wins!');
+        resultEl.classList.remove('text-bg-success');
+        resultEl.classList.add('text-bg-danger');
     } else{
-        document.querySelector('span').innerText = ('It\'s an even!')
-        document.getElementById('userDice', 'bobbyDice').classList.remove('border-danger');
+        resultEl.innerText = ('It\'s an even!')
+        //document.getElementById('userDice', 'bobbyDice').classList.remove('border-danger');
+        // si possono inserire due Id in un unico getElementBy Id? come?
+        bobbyDice.classList.remove('border-danger');
+        userDice.classList.remove('border-danger');
         bobbyDice.classList.add('border', 'border-success', 'border-3');
         userDice.classList.add('border', 'border-success', 'border-3');
+        resultEl.classList.remove('text-bg-danger');
+        resultEl.classList.add('text-bg-success');
     }
 })
 
