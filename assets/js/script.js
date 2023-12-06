@@ -1,3 +1,5 @@
+console.log(Date.now());
+
 //MAIL
 
 //lista email che hanno accesso
@@ -12,15 +14,18 @@ buttonEmail.addEventListener('click', function() {
     for (let i = 0; i < list.length; i++) {
         let element = list[i]; 
         if (element === userEmail){  
-            correctEmail = true;
-            document.getElementById('positiveCheck').classList.remove('d-none');
-            document.getElementById('emailInput').classList.remove('is-invalid'); 
+            correctEmail = true;//il ciclo cerca solo true o false!!!
+            //document.getElementById('positiveCheck').classList.remove('d-none');
+            //document.getElementById('emailInput').classList.remove('is-invalid'); 
        }
     
     } 
     if (correctEmail === false){  
         document.getElementById('positiveCheck').classList.add('d-none');
         document.getElementById('emailInput').classList.add('is-invalid');  
+    } else {
+        document.getElementById('positiveCheck').classList.remove('d-none');
+        document.getElementById('emailInput').classList.remove('is-invalid'); 
     }
     
 });
